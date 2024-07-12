@@ -140,9 +140,19 @@ impl ConditionallySelectable for AffinePoint {
 pub struct ExtendedPoint {
     u: Fq,
     v: Fq,
+    #[cfg_attr(feature = "arbitrary", arbitrary(with = arbitrary_non_zero_fq))]
     z: Fq,
     t1: Fq,
     t2: Fq,
+}
+
+#[cfg(feature = "arbitrary")]
+fn arbitrary_non_zero_fq(u: &mut arbitrary::Unstructured) -> arbitrary::Result<Fq> {
+    let raw: Fq = arbitrary::Arbitrary::arbitrary(u)?;
+    if bool::from(raw.is_zero()) {
+        return Err(arbitrary::Error::IncorrectFormat);
+    }
+    Ok(raw)
 }
 
 impl fmt::Display for ExtendedPoint {
