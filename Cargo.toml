@@ -4,13 +4,13 @@ authors = [
     "Eirik Ogilvie-Wigley <eowigley@gmail.com>",
     "Jack Grigg <thestr4d@gmail.com>",
 ]
-description = "Implementation of the Jubjub elliptic curve group"
+description = "(Namada fork) Implementation of the Jubjub elliptic curve group"
 documentation = "https://docs.rs/jubjub/"
 homepage = "https://github.com/zkcrypto/jubjub"
 license = "MIT/Apache-2.0"
-name = "jubjub"
-repository = "https://github.com/zkcrypto/jubjub"
-version = "0.10.0"
+name = "nam-jubjub"
+repository = "https://github.com/anoma/jubjub"
+version = "0.10.1-nam.0"
 edition = "2021"
 
 [dependencies.arbitrary]
