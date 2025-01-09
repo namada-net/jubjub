@@ -612,7 +612,7 @@ impl AffinePoint {
 
         items
             .into_iter()
-            .zip(denominators.into_iter())
+            .zip(denominators)
             .map(|(item, inv_denominator)| {
                 item.and_then(
                     |Item {
